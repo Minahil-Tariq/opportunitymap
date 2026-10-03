@@ -17,19 +17,6 @@ streamlit run app.py
 ```
 Works immediately in **demo mode** (no key needed).
 
-## Turn on AI mode (optional)
-Get a free API key at https://console.groq.com, then either:
-* local: `export GROQ_API_KEY=your_key` before `streamlit run app.py`
-* Streamlit Cloud: App settings -> Secrets -> `GROQ_API_KEY = "your_key"`
-
-## Deploy a public link (free, about 10 minutes)
-1. Create a GitHub account and a new **public** repo called `opportunitymap`.
-2. Upload every file from this folder (keep the `sample_transcripts` folder).
-3. Go to https://share.streamlit.io and sign in with GitHub.
-4. Click **Create app** -> choose your repo -> main file: `app.py` -> **Deploy**.
-5. (Optional) In Settings -> Secrets add `GROQ_API_KEY = "..."` for AI mode.
-6. Copy the `https://....streamlit.app` link into the form.
-
 ## Files
 | File | Purpose |
 |---|---|
