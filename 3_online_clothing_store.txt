@@ -1,0 +1,12 @@
+Engineer: Thanks for your time. What does the business look like?
+Client: We run an online clothing store doing around 300 orders a week with a team of 5.
+Engineer: Where is the time going?
+Client: Our support inbox is full of the same questions: where is my order, how do I return this, what size should I pick. Two people spend most of the day on it, roughly 6 hours a day in total.
+Engineer: What about suppliers?
+Client: Supplier invoices arrive as PDFs and our bookkeeper types every one into the accounting spreadsheet. About 40 invoices a week, around 6 minutes each.
+Engineer: And your sales channels?
+Client: Orders from Instagram and WhatsApp messages are copied by hand into our order system. It takes about 1 hour a day.
+Engineer: Marketing?
+Client: Our marketing is the same newsletter for everyone. We would love product recommendations based on what people browse and buy, but nobody has time to set that up.
+Engineer: Anything weekly?
+Client: Every Monday I pull sales numbers from three places into a spreadsheet for a weekly report. It takes about 3 hours a week.

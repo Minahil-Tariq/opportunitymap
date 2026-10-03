@@ -1,0 +1,12 @@
+Engineer: Thanks for joining. Tell me about the agency.
+Client: We're a 12-agent real estate agency. Our enquiries come from our website, property portals and Facebook ads.
+Engineer: How are the enquiries handled today?
+Client: Every new lead gets an email or text from an agent. Between all of us it's about 20 hours a week chasing leads and following up, and many of them are just browsing.
+Engineer: What about the shared inbox?
+Client: Our inbox gets around 80 emails a day from clients, lenders and inspectors, and someone has to sort them and forward them to the right agent. It takes about 2 hours a day.
+Engineer: Any document work?
+Client: Contracts and disclosure PDFs come in all the time. The coordinator reads each one to pull out the dates, prices and names, and types them into our CRM. We process about 25 a week at 20 minutes each.
+Engineer: What happens outside office hours?
+Client: Buyers call after hours and the voicemail fills up. We call back the next day, which is often too late.
+Engineer: And property viewings?
+Client: Showings are scheduled over lots of back and forth messages. It's about 30 minutes a day of coordination.
