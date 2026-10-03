@@ -1,0 +1,45 @@
+# OpportunityMap
+
+Turns a client **discovery-call transcript** into a ranked, evidence-backed
+**automation opportunity map** with transparent ROI, in about a minute.
+
+* The AI (or a rule-based fallback) only **extracts** facts.
+* Plain Python does the **ROI math**, so every number is traceable.
+* Every opportunity is linked to a **verbatim quote**, checked against the transcript.
+* A human can **edit assumptions**, and the map updates instantly.
+
+**Demo login:** `demo` / `demo123`
+
+## Run locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+Works immediately in **demo mode** (no key needed).
+
+## Turn on AI mode (optional)
+Get a free API key at https://console.groq.com, then either:
+* local: `export GROQ_API_KEY=your_key` before `streamlit run app.py`
+* Streamlit Cloud: App settings -> Secrets -> `GROQ_API_KEY = "your_key"`
+
+## Deploy a public link (free, about 10 minutes)
+1. Create a GitHub account and a new **public** repo called `opportunitymap`.
+2. Upload every file from this folder (keep the `sample_transcripts` folder).
+3. Go to https://share.streamlit.io and sign in with GitHub.
+4. Click **Create app** -> choose your repo -> main file: `app.py` -> **Deploy**.
+5. (Optional) In Settings -> Secrets add `GROQ_API_KEY = "..."` for AI mode.
+6. Copy the `https://....streamlit.app` link into the form.
+
+## Files
+| File | Purpose |
+|---|---|
+| `app.py` | Streamlit interface, login, tabs, downloads |
+| `engine.py` | Extraction (AI + fallback), ROI math, report builder |
+| `sample_transcripts/` | 3 fictional discovery calls for the demo |
+| `architecture.mmd` | Mermaid architecture diagram |
+| `requirements.txt` | Python dependencies |
+
+## Honest limitations
+* The rule-based fallback is keyword driven and is a demo of the pipeline, not a replacement for the AI mode.
+* ROI figures are estimates from what the client said, plus clearly flagged defaults.
+* Audio upload (faster-whisper) is planned for Phase 2.

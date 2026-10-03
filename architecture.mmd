@@ -1,0 +1,45 @@
+flowchart TD
+    USER["Dafinitiq engineer<br/>(demo login: demo / demo123)"] --> UI["Streamlit web app"]
+
+    subgraph INPUT["1. Input"]
+        S1["Sample discovery calls"]
+        S2["Paste transcript"]
+        S3["Upload .txt file"]
+        S4["Call audio - Phase 2<br/>faster-whisper speech-to-text"]
+    end
+
+    UI --> S1
+    UI --> S2
+    UI --> S3
+    UI --> S4
+    S4 -.-> T["Transcript text"]
+    S1 --> T
+    S2 --> T
+    S3 --> T
+
+    subgraph EXTRACT["2. Extract facts only - no math"]
+        T --> P["Split client turns<br/>drop interviewer lines"]
+        P --> LLM["Open LLM: Llama 3 via Groq<br/>returns strict JSON"]
+        P --> RULES["Rule-based fallback<br/>keywords + regex, no API key needed"]
+        LLM --> VAL["Pydantic validation"]
+        RULES --> VAL
+        VAL --> QV["Quote verifier<br/>is the evidence quote really in the transcript?"]
+    end
+
+    subgraph SCORE["3. Plain-Python ROI engine"]
+        QV --> MAP["Map each task to a Dafinitiq service<br/>email, documents, voice, chatbot, leads, booking..."]
+        MAP --> ROI["Annual savings =<br/>hours/week x 52 x hourly cost x automatable %"]
+        ROI --> PRI["Priority = savings / effort"]
+    end
+
+    subgraph HUMAN["4. Human in the loop"]
+        PRI --> EDIT["Editable assumptions table<br/>assumed values are flagged"]
+        EDIT --> ROI
+    end
+
+    PRI --> OUT["5. Output"]
+    OUT --> R1["Ranked opportunity map + chart"]
+    OUT --> R2["Evidence quotes per opportunity"]
+    OUT --> R3["Download report .md and table .csv"]
+
+    DEPLOY["Streamlit Community Cloud<br/>secrets: GROQ_API_KEY optional"] -.- UI
