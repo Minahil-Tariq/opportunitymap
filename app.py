@@ -1,16 +1,15 @@
 """OpportunityMap - turn a client discovery call into a ranked automation opportunity map."""
 import os
-from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
 import engine
+from samples import SAMPLES
 
 st.set_page_config(page_title="OpportunityMap", page_icon="🗺️", layout="wide")
 
 DEMO_USER, DEMO_PASS = "demo", "demo123"      # dummy credentials (shown on the login page on purpose)
-SAMPLES = sorted(Path(__file__).parent.joinpath("sample_transcripts").glob("*.txt"))
 EDIT_COLS = ["Task", "Service", "Owner", "Hours/week", "Automatable %", "Assumed"]
 
 
@@ -20,10 +19,6 @@ def get_api_key():
     except Exception:
         key = None
     return key or os.environ.get("GROQ_API_KEY")
-
-
-def sample_label(p: Path) -> str:
-    return p.stem.split("_", 1)[1].replace("_", " ").title()
 
 
 # ------------------------------------------------------------------ login
@@ -69,8 +64,8 @@ st.caption("Paste or upload a discovery-call transcript. The AI extracts the fac
 source = st.radio("Transcript source", ["Sample call", "Paste text", "Upload .txt"], horizontal=True)
 transcript = ""
 if source == "Sample call":
-    choice = st.selectbox("Choose a sample discovery call", SAMPLES, format_func=sample_label)
-    transcript = choice.read_text(encoding="utf-8")
+    choice = st.selectbox("Choose a sample discovery call", list(SAMPLES))
+    transcript = SAMPLES[choice]
     st.text_area("Transcript", transcript, height=220, disabled=True)
 elif source == "Paste text":
     transcript = st.text_area("Transcript (use 'Engineer:' and 'Client:' labels)", height=260)
