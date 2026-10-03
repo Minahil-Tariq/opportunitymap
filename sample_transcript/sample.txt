@@ -1,1 +1,11 @@
+Engineer: Thanks for making time today. Can you tell me a bit about your business?
+Client: We're a dental clinic in Toronto with 4 dentists and 2 front desk staff. We see about 120 patients every week.
+Engineer: Where does your team lose the most time?
+Client: The phone never stops. Our receptionist spends about 3 hours a day answering calls about opening hours, prices and directions. Most of them are the same questions.
+Engineer: What about booking?
+Client: Booking and rescheduling appointments is done by hand in the calendar. We handle about 60 changes a week, and it takes roughly 5 minutes each. Patients also forget, so we get a lot of no-shows.
+Engineer: And paperwork?
+Client: Every new patient fills in a paper form and an insurance PDF. Someone retypes them into our patient system, about 10 minutes each. We get around 15 new patients a week.
+Engineer: Anything around reporting?
+Client: On Fridays I export numbers into a spreadsheet and build a weekly report for the owners. That takes me about 2 hours a week.
 
